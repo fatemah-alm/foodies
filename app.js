@@ -1,7 +1,10 @@
 const express = require("express");
 const app = express();
 const connectDb = require("./database");
+const { urlencoded } = require("express");
 const categoryRoutes = require("./api/categories/routes");
+
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/api/categories", categoryRoutes);
