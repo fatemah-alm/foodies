@@ -11,7 +11,7 @@ const RecipeSchema = new mongoose.Schema(
     cookTime: Number,
     prepTime: Number,
     createdBy: String,
-    Category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
+    category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
     ingredients: [{ type: mongoose.Schema.Types.ObjectId, ref: "Ingredient" }],
     // user: String,
   },
