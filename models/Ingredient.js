@@ -7,6 +7,7 @@ const IngredientSchema = new mongoose.Schema(
     image: String, // emojie instead of image
     quantity: Number,
 
+    recipe: [{ type: mongoose.Schema.Types.ObjectId, ref: "Recipe" }],
     // add user
   },
   { timestamps: true }
