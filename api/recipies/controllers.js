@@ -26,6 +26,23 @@ exports.fetchRecipies = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.recipeDelete = async (req, res, next) => {
+  try {
+    const { recipeId } = req.params;
+    const foundRecipe = await Recipe.findById(recipeId);
+    if (foundRecipe) {
+      foundRecipe.remove();
+      return res.status(204).end();
+    } else {
+      const err = new Error("recipe Not Found!");
+      err.status = 404;
+      next(err);
+    }
+  } catch (error) {
+    next(error);
+  }
+};
 // fetch all recipies
 
 exports.fetchAllRecipies = async (req, res, next) => {
