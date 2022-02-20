@@ -13,6 +13,6 @@ const router = express.Router();
 router.get("/", fetchCategories);
 router.post("/", upload.single("image"), categoryCreate);
 router.delete("/:categoryId", categoryDelete);
-router.post("/:categoryId/recipies", createRecipies);
+router.post("/:categoryId/recipies", upload.single("image"), createRecipies);
 
 module.exports = router;
