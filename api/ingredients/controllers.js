@@ -15,9 +15,9 @@ exports.createIngredient = async (req, res, next) => {
     //   const newIngredient = await Ingredient.create(req.body);
     const newIngredient = await Ingredient.create(req.body);
 
-    await Recipe.updateMany(recipeId, {
-      $push: { ingredients: newIngredient._id },
-    });
+    // await Recipe.updateMany(recipeId, {
+    //   $push: { ingredients: newIngredient._id },
+    // });
 
     return res.status(201).json(newIngredient);
   } catch (error) {
