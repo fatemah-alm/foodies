@@ -48,7 +48,7 @@ exports.recipeDelete = async (req, res, next) => {
 exports.fetchAllRecipies = async (req, res, next) => {
   try {
     const recipies = await Recipe.find().populate("category");
-    console.log(recipies);
+    // console.log(recipies);
     res.json(recipies);
   } catch (error) {
     next(error);
